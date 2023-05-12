@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="http://localhost:35729/livereload.js"></script>
+
+
+<head>
+    <title>INSURME | Pension and Life Insurance Plans</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+</head>
+<body>
+
+
+<main>
+
+    <h1>Exception Page</h1>
+
+
+
+    <section id="hero">
+        <p th:text="${'Error Message: ' + errorMsg}"></p>
+        <a th:href="@{/home}">Return to homepage</a>
+    </section>
+
+</main>
+
+
+
+
+
+</body>
+
+</html>

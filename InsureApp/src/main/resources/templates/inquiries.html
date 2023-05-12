@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+</head>
+
+<body>
+<header th:replace="~{header :: header}"></header>
+
+<div>
+    <a th:href="@{/dashboard}">
+        <button class="btn">BACK</button>
+    </a>
+</div>
+
+<div>
+    <h4 class="inquiryTitle">Open Inquiries</h4>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Message</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="inquiry: ${inquiriesList}">
+            <td th:text="${inquiry.name}"></td>
+            <td th:text="${inquiry.phone}"></td>
+            <td th:text="${inquiry.email}"></td>
+            <td th:text="${inquiry.subject}"></td>
+            <td th:text="${inquiry.message}"></td>
+            <td><a th:href="@{/closeInquiry(id=${inquiry.inquiryId})}">CLOSE</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+
+</html>

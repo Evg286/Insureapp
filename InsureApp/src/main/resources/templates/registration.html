@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>INSURME | Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+
+
+</head>
+<body>
+<header th:replace="~{header :: header}"></header>
+
+<main>
+    <section id="location">
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+            <li class="active"><i></i>Register</li>
+        </ul>
+    </section>
+
+    <section id="registration">
+    <h2>Register</h2>
+
+
+        <ul>
+            <li class="alert alert-danger"
+                role="alert"
+                th:each="error : ${#fields.errors('user.*')}"
+                th:text="${error}"></li>
+        </ul>
+
+
+
+
+
+
+    <form th:action="@{/addUser}" method="post" class="signup-form" th:object="${user}" th:binding="${user}">
+
+        <div>
+            <label>Name</label>
+            <input type="text" th:field="*{name}" placeholder="Name">
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+        </div>
+        <div >
+            <label>Email</label>
+            <input type="text" th:field="*{email}" placeholder="Email">
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p>
+        </div>
+
+        <div >
+            <label>Confirm Email</label>
+            <input type="text" th:field="*{confirmEmail}" placeholder="Confirm email">
+            <p th:if="${#fields.hasErrors('confirmEmail')}" th:errors="*{confirmEmail}"></p>
+        </div>
+
+        <div>
+            <label>Phone</label>
+            <input type="text" th:field="*{phone}" placeholder="Phone">
+            <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+        </div>
+
+        <div >
+            <label>Password</label>
+            <input type="password" th:field="*{password}" placeholder="Password">
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></p>
+        </div>
+
+        <div >
+            <label>Confirm Password</label>
+            <input type="password" th:field="*{confirmPassword}" placeholder="Confirm password">
+            <p th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></p>
+        </div>
+
+        <button class="btn" type="submit">Register</button>
+    </form>
+
+    </section>
+</main>
+
+<footer th:replace="~{footer :: footer}"></footer>
+
+<!--<script src="/assets/js/bootstrap.min.js"></script>-->
+<!--<script src="/assets/js/jquery-3.3.1.min.js"></script>-->
+</body>
+</html>

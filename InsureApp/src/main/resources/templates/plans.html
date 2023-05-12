@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="http://localhost:35729/livereload.js"></script>
+<head>
+    <title>INSURME | Pension and Life Insurance Plans</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<footer th:replace="~{header :: header}"></footer>
+<main>
+
+    <section id="location">
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li class="active"><i></i>Plans</li>
+        </ul>
+    </section>
+    <section id="plans">
+        <ul>
+            <li>
+                <h3>Pension Plans</h3>
+                <p>Our pension plans provide a reliable source of income in retirement, helping you maintain your standard of living and enjoy your golden years.</p>
+                <a href="#" class="button">Learn More</a>
+                <div class="row">
+<!--                    <div th:if="${pension} == true">-->
+<!--                        <h5> Pension Plans</h5>-->
+<!--                        <div class="timeline">-->
+<!--                            <div class="timeline">-->
+<!--                                <div th:each="plan : ${PENSION}" class="column">-->
+<!--                                    <div class="title">-->
+<!--                                        <h2 th:text="${pension.name}"></h2>-->
+<!--                                    </div>-->
+<!--                                    <div class="description">-->
+<!--                                        <h6 th:text="${plan.type}"></h6>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </div>
+            </li>
+            <li>
+                <h3>Life Insurance Plans</h3>
+                <p>Our life insurance plans provide financial protection for your loved ones in the event of your death, ensuring that they can continue to meet their financial obligations and maintain their lifestyle.</p>
+                <a href="#" class="button">Learn More</a>
+            </li>
+
+        </ul>
+
+
+    </section>
+</main>
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+</html>

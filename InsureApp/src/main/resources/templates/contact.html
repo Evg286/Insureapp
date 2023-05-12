@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="http://localhost:35729/livereload.js"></script>
+
+
+<head>
+    <title>INSURME | Pension and Life Insurance Plans</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+
+</head>
+<body>
+<header th:replace="~{header :: header}"></header>
+
+<main>
+    <section id="location">
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li class="active"><i></i>Contact</li>
+        </ul>
+    </section>
+
+        <section id="hero">
+            <h2>Contact Us</h2>
+            <p>Have a question or want to learn more about our pension and life insurance plans? Contact us today to speak with one of our financial advisors.</p>
+        </section>
+        <section id="contact">
+
+            <h3>Send us a message</h3>
+
+<!--            <div>-->
+<!--                <ul>-->
+<!--                    <li class="alert alert-danger"-->
+<!--                        role="alert"-->
+<!--                        th:each="error : ${#fields.errors('contact.*')}"-->
+<!--                        th:text="${error}"></li>-->
+<!--                </ul>-->
+<!--            </div>-->
+
+
+
+            <form th:action="@{/saveMsg}" method="post" class="signin-form" th:object="${contact}" th:binding="${contact}">
+                <div>
+                    <label>Name</label>
+                    <input type="text" th:field="*{name}" placeholder="Name">
+                    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p> <!-- add this line -->
+                </div>
+                <div >
+                    <label>Email</label>
+                    <input type="email" th:field="*{email}" placeholder="Email">
+                    <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></p> <!-- add this line -->
+                </div>
+
+                <div >
+                    <label>Phone</label>
+                    <input type="text" th:field="*{phone}" placeholder="Phone">
+                    <p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p> <!-- add this line -->
+                </div>
+
+                <div >
+                    <label>Subject</label>
+                    <input type="text" th:field="*{subject}" placeholder="Subject">
+                    <p th:if="${#fields.hasErrors('subject')}" th:errors="*{subject}"></p> <!-- add this line -->
+                </div>
+
+                <div >
+                    <label >Message</label>
+                    <textarea type="text" th:field="*{message}" placeholder="Message"></textarea>
+                    <p th:if="${#fields.hasErrors('message')}" th:errors="*{message}"></p> <!-- add this line -->
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+
+        </section>
+
+</main>
+
+<footer th:replace="~{footer :: footer}"></footer>
+
+</body>
+
+</html>

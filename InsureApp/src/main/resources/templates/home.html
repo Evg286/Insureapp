@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<!--<script src="http://localhost:35729/livereload.js"></script>-->
+<head>
+  <title>INSURME | Pension and Life Insurance Plans</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+
+</head>
+<body>
+<header th:replace="~{header :: header}"></header>
+<!--<h2>INSUREME FOR A SAFER FUTURE</h2>-->
+<main id="homeBack">
+
+  <section >
+
+  <section id="hero">
+    <h2>Protect Your Future with INSUREME</h2>
+    <p>Choose from our pension and life insurance plans to secure your financial future.</p>
+    <a th:href="@{/plans}" class="button">View Plans</a>
+  </section>
+  <section id="about">
+    <h3>About Us</h3>
+    <p>INSUREME is a leading provider of pension and life insurance plans, helping individuals and families plan for their financial future. Our experienced team of financial advisors can help you choose the right plan to meet your needs and budget.</p>
+    <a th:href="@{/contact}" class="button">Contact Us</a>
+  </section>
+
+  </section>
+<!--  <section id="plans">-->
+<!--    <h2>Our Plans</h2>-->
+<!--    <ul>-->
+<!--      <li>-->
+<!--        <h3>Pension Plans</h3>-->
+<!--        <p>Our pension plans provide a reliable source of income in retirement, helping you maintain your standard of living and enjoy your golden years.</p>-->
+<!--        <a th:href="@{/plans}" class="button">Learn More</a>-->
+<!--      </li>-->
+<!--      <li>-->
+<!--        <h3>Life Insurance Plans</h3>-->
+<!--        <p>Our life insurance plans provide financial protection for your loved ones in the event of your death, ensuring that they can continue to meet their financial obligations and maintain their lifestyle.</p>-->
+<!--        <a th:href="@{/plans}"  class="button">Learn More</a>-->
+<!--      </li>-->
+<!--    </ul>-->
+<!--  </section>-->
+
+</main>
+
+<footer th:replace="~{footer :: footer}"></footer>
+
+</body>
+</html>

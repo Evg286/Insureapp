@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<script src="http://localhost:35729/livereload.js"></script>
+
+
+<head>
+    <title>INSURME | Pension and Life Insurance Plans</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+
+</head>
+<body>
+<header th:replace="~{header :: header}"></header>
+
+<main>
+    <section id="location">
+        <ul>
+            <li><a th:href="@{/home}">Home</a></li>
+            <li class="active"><i></i>Subscribe</li>
+        </ul>
+    </section>
+
+    <section id="hero">
+        <h2>Subscribe</h2>
+        <p>Subscribe to our pension and life insurance plans! Subscribe today to speak with one of our financial advisors.</p>
+    </section>
+    <section id="application">
+
+        <h3>Select a plan</h3>
+
+        <!--            <div>-->
+        <!--                <ul>-->
+        <!--                    <li class="alert alert-danger"-->
+        <!--                        role="alert"-->
+        <!--                        th:each="error : ${#fields.errors('contact.*')}"-->
+        <!--                        th:text="${error}"></li>-->
+        <!--                </ul>-->
+        <!--            </div>-->
+
+
+
+        <form th:action="@{/saveApplication}" method="post" class="signin-form" th:object="${apply}" th:binding="${apply}">
+
+            <div class="form-group">
+                <label>Select your plan:</label>
+                <select id="type" name="option" class="form-control" th:field="*{plan}">
+                    <option value="1">LIFE INSURANCE</option>
+                    <option value="2">PENSION</option>
+                </select>
+            </div>
+
+            <div>
+                <label >Comments</label>
+                <textarea type="text" th:field="*{comments}" placeholder="Comments"></textarea>
+            </div>
+            <button type="submit">Subscribe</button>
+        </form>
+
+    </section>
+
+</main>
+
+<footer th:replace="~{footer :: footer}"></footer>
+
+</body>
+
+</html>

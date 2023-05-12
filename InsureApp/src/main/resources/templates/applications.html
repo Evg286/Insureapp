@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/assets/css/styles.css}"/>
+</head>
+
+<body>
+<header th:replace="~{header :: header}"></header>
+
+<div>
+    <a th:href="@{/dashboard}">
+        <button class="btn">BACK</button>
+    </a>
+</div>
+
+<div>
+    <h4>Applications</h4>
+    <table>
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Email</th>
+            <th scope="col">Requested Plan</th>
+            <th scope="col">APPLICATION STATUS</th>
+            <th scope="col">Comments</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="apply: ${appList}">
+            <td th:text="${apply.userId}"></td>
+            <td th:text="${apply.name}"></td>
+            <td th:text="${apply.phone}"></td>
+            <td th:text="${apply.email}"></td>
+            <td th:text="${apply.plan}"></td>
+            <td th:text="${apply.status}"></td>
+            <td th:text="${apply.Comments}"></td>
+            <td><a th:href="@{/approveApplication(id=${apply.applicationId})}">APPROVE</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<footer th:replace="~{footer :: footer}"></footer>
+</body>
+
+</html>
