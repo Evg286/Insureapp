@@ -1,0 +1,1 @@
+Insureapp is a Java Spring project that provides a platform for users to register and apply for insurance plans. The project includes controllers, services, entities, and repositories to manage user registration, plan applications, and user profiles.
